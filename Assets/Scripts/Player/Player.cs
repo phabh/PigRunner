@@ -32,7 +32,8 @@ public class Player : MonoBehaviour {
 		MovePlayer();
 		Debug.Log(InputCamera.rotation.eulerAngles);
 		Debug.Log(360 + JumpLimit.x);
-		if ( InputCamera.rotation.eulerAngles.x - 360 > JumpLimit.x && _rigidBody.velocity == Vector3.zero)
+        
+		if (Input.GetButtonDown("Jump") || (InputCamera.rotation.eulerAngles.x - 360 > JumpLimit.x && _rigidBody.velocity == Vector3.zero))
 		{
 			Jump();
 		}
